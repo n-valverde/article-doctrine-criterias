@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Search an author (fixtures include only 'jk-rowling', you may try updating these)</h1>
+    <form>
+        <input name="search" type="text" placeholder="Search an author best-sellers"/>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if bestSellers is defined %}
+        <h2>Best Sellers from Repository (note no entity was needed)</h2>
+        <ul>
+            {% for book in bestSellers %}
+                <li>{{ book.id }} - {{ book.rating }}/10</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+{% endblock %}

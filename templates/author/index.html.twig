@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div>
+    <h1>Best Sellers from entity relationship with (Lazy) Collection</h1>
+    <h2>(You may try changing the relation 'fetch mode' and observe the differences)</h2>
+    <ul>
+        {% for book in author.bestSellers %}
+            <li>{{ book.id }} - {{ book.rating }}/10</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
